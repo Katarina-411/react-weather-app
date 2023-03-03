@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./styles.css";
 import FormattedDate from "./FormattedDate";
+import WindDirection from "./WindDirection";
 
 export default function Search() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState("");
-  const [direction, setDirection] = useState("");
 
   function displayWeather(response) {
     setWeather({
@@ -16,19 +16,8 @@ export default function Search() {
       wind: response.data.wind.speed,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       date: new Date(response.data.dt * 1000),
+      direction: response.data.wind.deg,
     });
-  }
-
-  function windDirection(response) {
-    let deg = response.data.wind.deg;
-    if (deg < 0) {
-      deg = 360 - (Math.abs(deg) % 360);
-    } else {
-      deg = deg % 360;
-    }
-    let directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
-    let w = parseInt(deg / 45);
-    setDirection(directions[w]);
   }
 
   function handleSubmit(event) {
@@ -41,7 +30,6 @@ export default function Search() {
       let units = "metric";
       let url = `${apiEndpoint}q=${city}&appid=${apiKey}&units=${units}`;
       axios.get(url).then(displayWeather);
-      axios.get(url).then(windDirection);
     }
   }
 
@@ -95,7 +83,8 @@ export default function Search() {
               <ul>
                 <li>Humidity: {weather.humidity}%</li>
                 <li>
-                  Wind: {Math.round(weather.wind)}km/h | {direction}
+                  Wind: {Math.round(weather.wind)}km/h |{" "}
+                  <WindDirection direction={weather.direction} />
                 </li>
                 <li>Sunrise:</li>
                 <li>Sunset:</li>
