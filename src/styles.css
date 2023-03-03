@@ -1,4 +1,27 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+p {
+  font-size: 18px;
+}
 ul {
   list-style: none;
   padding: 0;
+}
+.App-footer p,
+a {
+  font-size: 14px;
+  color: white;
+}
+.App-footer a {
+  color: #076470;
+  text-decoration: none;
+}
+.App-footer a:hover {
+  font-weight: 700;
 }

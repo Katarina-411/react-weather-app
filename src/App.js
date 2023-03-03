@@ -2,25 +2,38 @@ import "./App.css";
 import "./styles.css";
 import Search from "./Search";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
+      <div className="App-body">
         <h1>Weather App</h1>
         <Search />
-      </header>
+      </div>
       <footer className="App-footer">
-        <a
-          href="https://github.com/Katarina-411/react-weather-app.git"
-          target="blank"
-          rel="no-referrer"
-        >
-          Open-source code
-        </a>
-        <span> by Katarina Farkas</span>
+        <p>
+          This application was built using ReactJS{" "}
+          <img src="./logo192.png" alt="React logo" class="App-logo" />
+        </p>
+        <span>
+          <p>
+            <a
+              href="https://github.com/Katarina-411/react-weather-app.git"
+              target="blank"
+              rel="no-referrer"
+            >
+              Open-source code
+            </a>{" "}
+            by{" "}
+            <a
+              href="https://katarina-farkas.netlify.app/"
+              target="blank"
+              rel="no-referrer"
+            >
+              Katarina Farkas
+            </a>
+          </p>
+        </span>
       </footer>
     </div>
   );
 }
-
-export default App;
