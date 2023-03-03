@@ -4,11 +4,8 @@ import Search from "./Search";
 
 export default function App() {
   return (
-    <div className="App">
-      <div className="App-body">
-        <h1>Weather App</h1>
-        <Search />
-      </div>
+    <div className="App container">
+      <Search />
       <footer className="App-footer">
         <p>
           This application was built using ReactJS{" "}
