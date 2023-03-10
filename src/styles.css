@@ -35,16 +35,20 @@
   position: relative;
   top: -30px;
 }
+.temperature-today-unit a {
+  text-decoration: none;
+  color: #076470;
+}
 
-.App-footer p,
-a {
-  font-size: 14px;
+.App-footer p {
+  font-size: 12px;
 }
 .App-footer a {
+  font-size: 12px;
   color: #076470;
   text-decoration: none;
 }
-.App-footer a:hover {
+a:hover {
   font-weight: 700;
-  color: #076470;
+  color: #076470 !important;
 }
