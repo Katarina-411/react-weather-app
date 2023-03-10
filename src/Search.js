@@ -16,6 +16,7 @@ export default function Search() {
       icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
       direction: response.data.wind.deg,
+      city: response.data.name,
     });
   }
 
