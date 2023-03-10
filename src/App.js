@@ -1,5 +1,5 @@
 import "./App.css";
-import "./styles.css";
+import "./weather.css";
 import Search from "./Search";
 
 export default function App() {
@@ -17,18 +17,15 @@ export default function App() {
             Katarina Farkas
           </a>{" "}
           using ReactJS{" "}
-          <img src="./logo192.png" alt="React logo" class="App-logo" />
-        </p>
-        <p>
-          {" "}
-          and is{" "}
+          <img src="./logo192.png" alt="React logo" class="App-logo" /> and is{" "}
           <a
             href="https://github.com/Katarina-411/react-weather-app.git"
             target="blank"
             rel="no-referrer"
           >
-            open-sourced on GitHub
+            open-sourced
           </a>{" "}
+          on GitHub
         </p>
       </footer>
     </div>

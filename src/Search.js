@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import "./styles.css";
+import "./weather.css";
 import WeatherInfo from "./WeatherInfo";
 import WeatherForecast from "./WeatherForecast";
 
@@ -18,7 +18,12 @@ export default function Search() {
       date: new Date(response.data.dt * 1000),
       direction: response.data.wind.deg,
       city: response.data.name,
+      country: response.data.sys.country,
       coordinates: response.data.coord,
+      sunrise: new Date(response.data.sys.sunrise * 1000),
+      sunset: new Date(response.data.sys.sunset * 1000),
+      min: response.data.main.temp_min,
+      max: response.data.main.temp_max,
     });
   }
 
@@ -40,7 +45,7 @@ export default function Search() {
   }
 
   let form = (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="container">
       <div className="row mt-3 mb-3">
         <div className="col-9">
           <input
@@ -71,7 +76,8 @@ export default function Search() {
         </div>
       ) : (
         <p className="weather">
-          Please enter a city name to see the current and forecast weather
+          Please enter a city name to see the current and daily forecasted
+          weather
         </p>
       )}
     </div>
