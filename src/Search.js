@@ -75,7 +75,7 @@ export default function Search() {
           <WeatherForecast coordinates={weather.coordinates} />{" "}
         </div>
       ) : (
-        <p className="weather">
+        <p className="weather container text-center">
           Please enter a city name to see the current and daily forecasted
           weather
         </p>
