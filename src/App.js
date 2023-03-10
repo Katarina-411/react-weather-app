@@ -8,28 +8,28 @@ export default function App() {
       <Search />
       <footer className="App-footer">
         <p>
-          This application was built using ReactJS{" "}
+          This application was coded by{" "}
+          <a
+            href="https://katarina-farkas.netlify.app/"
+            target="blank"
+            rel="no-referrer"
+          >
+            Katarina Farkas
+          </a>{" "}
+          using ReactJS{" "}
           <img src="./logo192.png" alt="React logo" class="App-logo" />
         </p>
-        <span>
-          <p>
-            <a
-              href="https://github.com/Katarina-411/react-weather-app.git"
-              target="blank"
-              rel="no-referrer"
-            >
-              Open-source code
-            </a>{" "}
-            by{" "}
-            <a
-              href="https://katarina-farkas.netlify.app/"
-              target="blank"
-              rel="no-referrer"
-            >
-              Katarina Farkas
-            </a>
-          </p>
-        </span>
+        <p>
+          {" "}
+          and is{" "}
+          <a
+            href="https://github.com/Katarina-411/react-weather-app.git"
+            target="blank"
+            rel="no-referrer"
+          >
+            open-sourced on GitHub
+          </a>{" "}
+        </p>
       </footer>
     </div>
   );

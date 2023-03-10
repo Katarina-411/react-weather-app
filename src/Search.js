@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./styles.css";
 import WeatherInfo from "./WeatherInfo";
+import WeatherForecast from "./WeatherForecast";
 
 export default function Search() {
   const [city, setCity] = useState("");
@@ -17,6 +18,7 @@ export default function Search() {
       date: new Date(response.data.dt * 1000),
       direction: response.data.wind.deg,
       city: response.data.name,
+      coordinates: response.data.coord,
     });
   }
 
@@ -63,10 +65,13 @@ export default function Search() {
     <div>
       {form}
       {weather ? (
-        <WeatherInfo data={weather} />
+        <div>
+          <WeatherInfo data={weather} />
+          <WeatherForecast coordinates={weather.coordinates} />{" "}
+        </div>
       ) : (
         <p className="weather">
-          Please enter a city name to see the current weather
+          Please enter a city name to see the current and forecast weather
         </p>
       )}
     </div>
