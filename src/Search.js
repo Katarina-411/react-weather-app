@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./styles.css";
-import FormattedDate from "./FormattedDate";
-import WindDirection from "./WindDirection";
-import WeatherIcon from "./WeatherIcon";
+import WeatherInfo from "./WeatherInfo";
 
 export default function Search() {
   const [city, setCity] = useState("");
@@ -64,36 +62,7 @@ export default function Search() {
     <div>
       {form}
       {weather ? (
-        <div className="weather">
-          <h1>{city}</h1>
-          <ul>
-            <li>
-              <FormattedDate date={weather.date} />
-            </li>
-            <li>{weather.condition}</li>
-          </ul>
-          <div className="row mt-3">
-            <div className="col-6">
-              <WeatherIcon code={weather.icon} />
-              <span className="temperature-today">
-                {Math.round(weather.temperature)}
-              </span>
-              <span className="temperature-today-unit">°C</span>
-            </div>
-            <div className="col-6">
-              <ul>
-                <li>Humidity: {weather.humidity}%</li>
-                <li>
-                  Wind: {Math.round(weather.wind)}km/h |{" "}
-                  <WindDirection direction={weather.direction} />
-                </li>
-                <li>Sunrise:</li>
-                <li>Sunset:</li>
-              </ul>
-            </div>
-            <hr />
-          </div>
-        </div>
+        <WeatherInfo data={weather} />
       ) : (
         <p className="weather">
           Please enter a city name to see the current weather
