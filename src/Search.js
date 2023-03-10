@@ -3,6 +3,7 @@ import axios from "axios";
 import "./styles.css";
 import FormattedDate from "./FormattedDate";
 import WindDirection from "./WindDirection";
+import WeatherIcon from "./WeatherIcon";
 
 export default function Search() {
   const [city, setCity] = useState("");
@@ -14,7 +15,7 @@ export default function Search() {
       condition: response.data.weather[0].main,
       humidity: response.data.main.humidity,
       wind: response.data.wind.speed,
-      icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
       direction: response.data.wind.deg,
     });
@@ -73,7 +74,7 @@ export default function Search() {
           </ul>
           <div className="row mt-3">
             <div className="col-6">
-              <img src={weather.icon} alt="{weather.condition} icon" />
+              <WeatherIcon code={weather.icon} />
               <span className="temperature-today">
                 {Math.round(weather.temperature)}
               </span>

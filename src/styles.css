@@ -23,9 +23,8 @@
   font-size: 16px;
   line-height: 20px;
 }
-.weather img {
-  position: relative;
-  top: -15px;
+.weather canvas {
+  margin-right: 10px;
 }
 .weather .temperature-today {
   font-size: 60px;
